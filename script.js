@@ -547,6 +547,7 @@ function updatePositions()
         if (parseInt(document.getElementById("lives").innerHTML) < 1)
         {
             terminate = true;
+            endless = false;
             document.getElementById("endOfLevelBox").style.display = "block";
             document.getElementById("messageBox").innerHTML = "Defeat";
             for (var i = 0; i < enemyCount; i++)
