@@ -874,11 +874,11 @@ async function checkIfProjectileIsTouchingBarrier(id)
     {
         checkIfTouching(document.getElementById(id), document.getElementById(i))
         {
-            if (obj1_onLeftOf_obj2 == true || obj1_onRightOf_obj2 == true)
+            if (obj1_onTopOf_obj2 == true || obj2_onTopOf_obj1 == true)
             {
                 document.getElementById(id).style.zIndex = parseInt(document.getElementById(id).style.zIndex) * -1;
             }
-            if (obj1_onTopOf_obj2 == true || obj2_onTopOf_obj1 == true)
+            if (obj1_onLeftOf_obj2 == true || obj1_onRightOf_obj2 == true)
             {
                 if (parseInt(document.getElementById(id).style.padding) == 0)
                 {
