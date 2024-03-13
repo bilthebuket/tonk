@@ -549,6 +549,13 @@ function updatePositions()
             terminate = true;
             document.getElementById("endOfLevelBox").style.display = "block";
             document.getElementById("messageBox").innerHTML = "Defeat";
+            for (var i = 0; i < enemyCount; i++)
+            {
+                if (JSON.stringify(document.getElementById(i)) != "null")
+                {
+                    document.getElementById(i).remove();
+                }
+            }
             if (parseInt(document.getElementById("lives").innerHTML) < 0)
             {
                 document.getElementById("score").innerHTML = Math.floor(parseInt(document.getElementById("kills").innerHTML) * 20 / Math.log(parseInt(document.getElementById("shotsFired").innerHTML)));
