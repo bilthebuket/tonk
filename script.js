@@ -786,19 +786,19 @@ function checkIfTouching(object1, object2)
     const obj1 = object1.getBoundingClientRect();
     const obj2 = object2.getBoundingClientRect();
 
-    if ((obj1.left < obj2.right) && (obj1.right > obj2.right) && ((obj1.top > obj2.top && obj1.top < obj2.bottom) || (obj1.bottom > obj2.top && obj1.bottom < obj2.bottom) || (obj2.top > obj1.top && obj2.top < obj1.bottom) || (obj2.bottom > obj1.top && obj2.bottom < obj1.bottom)))
+    if ((obj1.left - obj2.right <= 0 && obj1.left - obj2.right >= -10) && (obj1.right - obj2.right >= 0 && obj1.right - obj2.right <= 10) && ((obj1.top > obj2.top && obj1.top < obj2.bottom) || (obj1.bottom > obj2.top && obj1.bottom < obj2.bottom) || (obj2.top > obj1.top && obj2.top < obj1.bottom) || (obj2.bottom > obj1.top && obj2.bottom < obj1.bottom)))
     {
         obj1_onRightOf_obj2 = true;
     }
-    if (obj2.left < obj1.right && (obj2.right > obj1.right) && ((obj1.top > obj2.top && obj1.top < obj2.bottom) || (obj1.bottom > obj2.top && obj1.bottom < obj2.bottom) || (obj2.top > obj1.top && obj2.top < obj1.bottom) || (obj2.bottom > obj1.top && obj2.bottom < obj1.bottom)))
+    if (obj2.left - obj1.right <= 0 && obj2.left - obj1.right >= -10 && (obj2.right - obj1.right >= 0) && obj2.right - obj1.right <= 10 && ((obj1.top > obj2.top && obj1.top < obj2.bottom) || (obj1.bottom > obj2.top && obj1.bottom < obj2.bottom) || (obj2.top > obj1.top && obj2.top < obj1.bottom) || (obj2.bottom > obj1.top && obj2.bottom < obj1.bottom)))
     {
         obj1_onLeftOf_obj2 = true;
     }
-    if ((obj1.top < obj2.bottom) && (obj1.bottom > obj2.bottom) && ((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
+    if ((obj1.top - obj2.bottom <= 0) && obj1.top - obj2.bottom >= -10 && (obj1.bottom - obj2.bottom >= 0) && obj1.bottom - obj2.bottom <= 10 &&((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
     {
         obj2_onTopOf_obj1 = true;
     }
-    if ((obj2.top < obj1.bottom) && (obj2.bottom > obj1.bottom) && ((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
+    if ((obj2.top - obj1.bottom <= 0) && obj2.top - obj1.bottom >= -10 && (obj2.bottom - obj1.bottom >= 0) && obj2.bottom - obj1.bottom <= 10 && ((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
     {
         obj1_onTopOf_obj2 = true;
     }
@@ -877,16 +877,19 @@ async function checkIfProjectileIsTouchingBarrier(id)
             if (obj1_onLeftOf_obj2 == true || obj1_onRightOf_obj2 == true)
             {
                 document.getElementById(id).style.zIndex = parseInt(document.getElementById(id).style.zIndex) * -1;
+                debugger;
             }
             if (obj1_onTopOf_obj2 == true || obj2_onTopOf_obj1 == true)
             {
                 if (parseInt(document.getElementById(id).style.padding) == 0)
                 {
                     document.getElementById(id).style.padding = "1px";
+                    debugger;
                 }
                 else
                 {
                     document.getElementById(id).style.padding = "0px";
+                    debugger;
                 }
             }
             if (obj1_onTopOf_obj2 == true || obj1_onRightOf_obj2 == true || obj1_onLeftOf_obj2 == true || obj2_onTopOf_obj1 == true)
