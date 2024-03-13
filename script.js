@@ -328,7 +328,7 @@ function updatePositions()
         }
         for (var j = -1; j > barrierCount; j = j - 1)
         {
-            checkIfTouching(document.getElementById("user"), document.getElementById(j));
+            checkIfTonkTouching(document.getElementById("user"), document.getElementById(j));
             if (obj1_onLeftOf_obj2 == true || obj1_onRightOf_obj2 == true)
             {
                 userVelocity[0] = userVelocity[0] * -1;
@@ -406,7 +406,7 @@ function updatePositions()
         {
             for (var j = -1; j > barrierCount; j = j - 1)
             {
-                checkIfTouching(document.getElementById(i), document.getElementById(j));
+                checkIfTonkTouching(document.getElementById(i), document.getElementById(j));
                 if (obj1_onLeftOf_obj2 == true || obj1_onRightOf_obj2 == true)
                 {
                     document.getElementById(i).style.zIndex = parseInt(document.getElementById(i).style.zIndex) * -1;
@@ -713,7 +713,7 @@ function setCpuSpawn(id)
     document.getElementById(id).style.marginTop = Math.floor(Math.random() * 201) + 125 + "px"
     for (var i = -1; i >= barrierCount; i = i - 1)
     {
-        checkIfTouching(document.getElementById(id), document.getElementById(i));
+        checkIfTonkTouching(document.getElementById(id), document.getElementById(i));
         if (obj1_onLeftOf_obj2 == true || obj1_onRightOf_obj2 == true || obj1_onTopOf_obj2 == true || obj2_onTopOf_obj1 == true)
         {
             setCpuSpawn(id);
@@ -807,6 +807,33 @@ function checkIfTouching(object1, object2)
         obj2_onTopOf_obj1 = true;
     }
     if ((obj2.top - obj1.bottom <= 0) && obj2.top - obj1.bottom >= -10 && (obj2.bottom - obj1.bottom >= 0) && obj2.bottom - obj1.bottom <= 10 && ((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
+    {
+        obj1_onTopOf_obj2 = true;
+    }
+}
+
+function checkIfTonkTouching(object1, object2)
+{
+    obj1_onLeftOf_obj2 = false;
+    obj1_onRightOf_obj2 = false;
+    obj1_onTopOf_obj2 = false;
+    obj2_onTopOf_obj1 = false;
+    const obj1 = object1.getBoundingClientRect();
+    const obj2 = object2.getBoundingClientRect();
+
+    if ((obj1.left < obj2.right) && (obj1.right > obj2.right) && ((obj1.top > obj2.top && obj1.top < obj2.bottom) || (obj1.bottom > obj2.top && obj1.bottom < obj2.bottom) || (obj2.top > obj1.top && obj2.top < obj1.bottom) || (obj2.bottom > obj1.top && obj2.bottom < obj1.bottom)))
+    {
+        obj1_onRightOf_obj2 = true;
+    }
+    if (obj2.left < obj1.right && (obj2.right > obj1.right) && ((obj1.top > obj2.top && obj1.top < obj2.bottom) || (obj1.bottom > obj2.top && obj1.bottom < obj2.bottom) || (obj2.top > obj1.top && obj2.top < obj1.bottom) || (obj2.bottom > obj1.top && obj2.bottom < obj1.bottom)))
+    {
+        obj1_onLeftOf_obj2 = true;
+    }
+    if ((obj1.top < obj2.bottom) && (obj1.bottom > obj2.bottom) && ((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
+    {
+        obj2_onTopOf_obj1 = true;
+    }
+    if ((obj2.top < obj1.bottom) && (obj2.bottom > obj1.bottom) && ((obj1.left > obj2.left && obj1.left < obj2.right) || (obj1.right > obj2.left && obj1.right < obj2.right) || (obj2.left > obj1.left && obj2.left < obj1.right) || (obj2.right > obj1.left && obj2.right < obj1.right)))
     {
         obj1_onTopOf_obj2 = true;
     }
