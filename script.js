@@ -199,7 +199,7 @@ function startGame(level)
 async function executeEndless()
 {
     var totalEnemysSpawned = 0;
-    while (terminate == false)
+    while (terminate == false && endless == true)
     {
         enemyCount = enemyCount + 2;
         document.getElementById("round").innerHTML = "Round " + (enemyCount / 2);
