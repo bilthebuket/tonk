@@ -1,0 +1,201 @@
+#container
+{
+    height:500px;
+    width:1200px;
+    border:100px solid black;
+    border-radius:25px;
+    position:relative;
+    margin:auto;
+    background-image:url(menuImage.png);
+    z-index: -20;
+    font-family:blops;
+}
+#user
+{
+    height:50px;
+    width:50px;
+    background-image:url(tonk.png);
+    position:absolute;
+    margin-top:100px;
+    border:none;
+    display:none;
+}
+
+@font-face
+{
+    font-family: blops;
+    src: url(blops.ttf);
+    font-weight: bold;
+}
+
+#header
+{
+    position:absolute;
+    font-size:100px;
+    margin-left:900px;
+    border-bottom:10px solid black;
+    border-top:10px solid black;
+    margin-top:150px;
+    z-index: -10;
+}
+
+#start, #settings, #lvl1, #lvl2, #lvl3, #lvl4, #lvl5, #lvl6, #lvl7, #lvl8, #endless, #back
+{
+    width:200px;
+    height:50px;
+    font-size:35px;
+    text-align:center;
+    position: absolute;
+    font-family:blops;
+    border:5px solid black;
+    color:black;
+    border-radius:5px;
+    background-image:url(buttonBackground.png);
+    background-color:black;
+    transition:ease-in-out 0.3s;
+    z-index: 1;
+}
+#start:hover, #settings:hover, #lvl1:hover, #lvl2:hover, #lvl3:hover, #lvl4:hover, #lvl5:hover, #menu:hover, #lvl6:hover, #lvl7:hover, #lvl8:hover, #endless:hover, #back:hover
+{
+    background-color:black;
+    background-image:none;
+    color:white;
+}
+
+#start
+{
+    margin-top:250px;
+}
+#settings
+{
+    margin-top:350px;
+}
+
+#lvl1
+{
+    margin-top:148px;
+    display:none;
+}
+#lvl2
+{
+    margin-top:238px;
+    display:none;
+}
+#lvl3
+{
+    margin-top:328px;
+    display:none;
+}
+#lvl4
+{
+    margin-top:418px;
+    display:none;
+}
+#lvl5
+{
+    margin-top:508px;
+    display:none;
+}
+#lvl6
+{
+    margin-top:148px;
+    display:none;
+}
+#lvl7
+{
+    margin-top:238px;
+    display:none;
+}
+#lvl8
+{
+    margin-top:328px;
+    display:none;
+}
+#endless
+{
+    margin-top:418px;
+    display:none;
+}
+#back
+{
+    margin-top:508px;
+    display:none;
+}
+
+#endOfLevelBox
+{
+    display:none;
+    position:absolute;
+    height:400px;
+    width:300px;
+    margin-top:108px;
+    background-color:rgb(145, 56, 0);
+    border:5px solid black;
+    border-radius:5px;
+    text-align: center;
+}
+
+#menu
+{
+    width:200px;
+    height:50px;
+    font-size:35px;
+    text-align:center;
+    position: relative;
+    margin:auto;
+    font-family:blops;
+    border:5px solid black;
+    color:black;
+    border-radius:5px;
+    background-image:url(buttonBackground.png);
+    background-color:black;
+    transition:ease-in-out 0.3s;
+    z-index: 1;
+    margin-top:100px;
+}
+
+#stats
+{
+    font-size:20px;
+    border:1px solid black;
+    width:100%;
+}
+
+td
+{
+    float:right;
+    padding:5px;
+}
+
+th
+{
+    float:left;
+    padding:5px;
+}
+
+tr
+{
+    border-bottom:1px solid black;
+}
+
+#lives2
+{
+    color:white;
+    font-family:blops;
+    position:absolute;
+    display:none;
+    width:200px;
+    text-align: center;
+    margin-top:50px;
+}
+
+#round
+{
+    color:white;
+    font-family:blops;
+    position:absolute;
+    display:none;
+    width:200px;
+    text-align: center;
+    margin-top:25px;
+}

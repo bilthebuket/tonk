@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tonk
+        </title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="tonk.png?v=2" type="image/png"/>
+    </head>
+    <body>
+        <h1 id="round"></h1>
+        <h3 id="lives2">Lives: 5</h3>
+        <button id="start" onclick="showLevelSelector()">Start</button>
+        <button id="settings">Settings</button>
+        <button id="lvl1" onclick="startGame(1)">Level 1</button>
+        <button id="lvl2" onclick="startGame(2)">Level 2</button>
+        <button id="lvl3" onclick="startGame(3)">Level 3</button>
+        <button id="lvl4" onclick="startGame(4)">Level 4</button>
+        <button id="lvl5" onclick="startGame(5)">Level 5</button>
+        <button id="lvl6" onclick="startGame(6)">Level 6</button>
+        <button id="lvl7" onclick="startGame(7)">Level 7</button>
+        <button id="lvl8" onclick="startGame(8)">Level 8</button>
+        <button id="endless" onclick="startGame('endless')">Endless</button>
+        <button id="back" onclick="toMenu()">Back</button>
+
+        <div id="endOfLevelBox">
+            <h1 id="messageBox">Victory</h1>
+            <table id="stats">
+                <tr>
+                    <th>
+                        Kills
+                    </th>
+                    <td id="kills">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Lives
+                    </th>
+                    <td id="lives">
+                        5
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Shots Fired
+                    </th>
+                    <td id="shotsFired">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Score
+                    </th>
+                    <td id="score">
+                        0
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <button id="menu" onclick="showLevelSelector()">Menu</button>
+        </div>
+        <div id="container">
+            <h1 id="header">Tonk</h1>
+
+            <div id="user"></div>
+        </div>
+    </body>
+</html>
