@@ -39,7 +39,7 @@
     z-index: -10;
 }
 
-#start, #settings, #lvl1, #lvl2, #lvl3, #lvl4, #lvl5, #lvl6, #lvl7, #lvl8, #endless, #back
+#start, #howToPlay, #lvl1, #lvl2, #lvl3, #lvl4, #lvl5, #lvl6, #lvl7, #lvl8, #endless, #back
 {
     width:200px;
     height:50px;
@@ -55,7 +55,7 @@
     transition:ease-in-out 0.3s;
     z-index: 1;
 }
-#start:hover, #settings:hover, #lvl1:hover, #lvl2:hover, #lvl3:hover, #lvl4:hover, #lvl5:hover, #menu:hover, #lvl6:hover, #lvl7:hover, #lvl8:hover, #endless:hover, #back:hover
+#start:hover, #howToPlay:hover, #lvl1:hover, #lvl2:hover, #lvl3:hover, #lvl4:hover, #lvl5:hover, #menu:hover, #lvl6:hover, #lvl7:hover, #lvl8:hover, #endless:hover, #back:hover
 {
     background-color:black;
     background-image:none;
@@ -66,7 +66,7 @@
 {
     margin-top:250px;
 }
-#settings
+#howToPlay
 {
     margin-top:350px;
 }
@@ -198,4 +198,15 @@ tr
     width:200px;
     text-align: center;
     margin-top:25px;
+}
+
+#instructions
+{
+    font-family: blops;
+    width:400px;
+    display:none;
+    margin-top:100px;
+    background-color: rgb(145, 56, 0);
+    border:5px solid black;
+    text-align:center;
 }
