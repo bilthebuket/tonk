@@ -30,7 +30,7 @@ var endless = false;
 document.addEventListener('DOMContentLoaded', function()
 {
     document.getElementById("start").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 200 + "px";
-    document.getElementById("settings").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 200 + "px";
+    document.getElementById("howToPlay").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 200 + "px";
     document.getElementById("lvl1").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 200 + "px";
     document.getElementById("lvl2").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 200 + "px";
     document.getElementById("lvl3").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 200 + "px";
@@ -44,12 +44,37 @@ document.addEventListener('DOMContentLoaded', function()
     document.getElementById("endOfLevelBox").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 550 + "px";
     document.getElementById("lives2").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 700 - (parseInt(window.getComputedStyle(document.getElementById("lives2")).width) / 2) + "px";
     document.getElementById("round").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 700 - (parseInt(window.getComputedStyle(document.getElementById("round")).width) / 2) + "px";
+    document.getElementById("instructions").style.marginLeft = (-1 * (parseInt(window.getComputedStyle(document.getElementById("instructions")).width) / 2)) + 300 + "px";
 });
+
+function showHowToPlay()
+{
+    document.getElementById("start").style.display = "none";
+    document.getElementById("howToPlay").style.display = "none";
+    document.getElementById("lvl1").style.display = "none";
+    document.getElementById("lvl2").style.display = "none";
+    document.getElementById("lvl3").style.display = "none";
+    document.getElementById("lvl4").style.display = "none";
+    document.getElementById("lvl5").style.display = "none";
+    document.getElementById("lvl6").style.display = "none";
+    document.getElementById("lvl7").style.display = "none";
+    document.getElementById("lvl8").style.display = "none";
+    document.getElementById("endless").style.display = "none";
+    document.getElementById("back").style.display = "block";
+    document.getElementById("endOfLevelBox").style.display = "none";
+    document.getElementById("container").style.backgroundImage = "url('menuImage.png')";
+    document.getElementById("lives2").style.display = "none";
+    document.getElementById("round").style.display = "none";
+    document.getElementById("header").style.display = "block";
+    document.getElementById("instructions").style.display = "block";
+    document.getElementById("back").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 300 + "px";
+    document.getElementById("back").style.marginTop = "350px";
+}
 
 function toMenu()
 {
     document.getElementById("start").style.display = "block";
-    document.getElementById("settings").style.display = "block";
+    document.getElementById("howToPlay").style.display = "block";
     document.getElementById("lvl1").style.display = "none";
     document.getElementById("lvl2").style.display = "none";
     document.getElementById("lvl3").style.display = "none";
@@ -65,12 +90,15 @@ function toMenu()
     document.getElementById("lives2").style.display = "none";
     document.getElementById("round").style.display = "none";
     document.getElementById("header").style.display = "block";
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("back").style.marginLeft = parseInt(window.getComputedStyle(document.getElementById("container")).marginLeft) + 440 + "px";
+    document.getElementById("back").style.marginTop = "508px";
 }
 
 function showLevelSelector()
 {
     document.getElementById("start").style.display = "none";
-    document.getElementById("settings").style.display = "none";
+    document.getElementById("howToPlay").style.display = "none";
     document.getElementById("lvl1").style.display = "block";
     document.getElementById("lvl2").style.display = "block";
     document.getElementById("lvl3").style.display = "block";
@@ -85,6 +113,7 @@ function showLevelSelector()
     document.getElementById("container").style.backgroundImage = "url('menuImage.png')";
     document.getElementById("lives2").style.display = "none";
     document.getElementById("round").style.display = "none";
+    document.getElementById("instructions").style.display = "none";
     for (var i = -1; i >= barrierCount; i = i - 1)
     {
         if (JSON.stringify(document.getElementById(i)) != "null")
@@ -130,7 +159,7 @@ function startGame(level)
         enemyCount = level * 2;
         barrierCount = level * -2;
         document.getElementById("header").style.display = "none";
-        document.getElementById("settings").style.display = "none";
+        document.getElementById("howToPlay").style.display = "none";
         document.getElementById("start").style.display = "none";
         document.getElementById("lvl1").style.display = "none";
         document.getElementById("lvl2").style.display = "none";
@@ -141,6 +170,7 @@ function startGame(level)
         document.getElementById("lvl7").style.display = "none";
         document.getElementById("lvl8").style.display = "none";
         document.getElementById("endless").style.display = "none";
+        document.getElementById("instructions").style.display = "none";
         document.getElementById("back").style.display = "none";
         document.getElementById("endOfLevelBox").style.display = "none";
         document.getElementById("lives2").style.display = "block";
@@ -174,13 +204,14 @@ function startGame(level)
         document.addEventListener('mousemove', event => obj.getCursorPosition(event));
         document.addEventListener('mousedown', event => obj.getCursorPosition(event));
         document.getElementById("header").style.display = "none";
-        document.getElementById("settings").style.display = "none";
+        document.getElementById("howToPlay").style.display = "none";
         document.getElementById("start").style.display = "none";
         document.getElementById("lvl1").style.display = "none";
         document.getElementById("lvl2").style.display = "none";
         document.getElementById("lvl3").style.display = "none";
         document.getElementById("lvl4").style.display = "none";
         document.getElementById("lvl5").style.display = "none";
+        document.getElementById("instructions").style.display = "none";
         document.getElementById("lvl6").style.display = "none";
         document.getElementById("lvl7").style.display = "none";
         document.getElementById("lvl8").style.display = "none";
